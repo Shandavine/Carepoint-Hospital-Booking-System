@@ -17,7 +17,7 @@ A simple diagnostic test booking system for CarePoint Hospital built with HTML, 
 - `index.html` – Home
 - `booking.html` – Booking form
 - `admin.html` – Admin login
-- `admin-dashboard.html` – View bookings
+- `dashboard.html` – View bookings
 
 ## Tech Used
 
