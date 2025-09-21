@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Test | CarePoint Hospital</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            /* background: white; */
+            border-radius: 10px;
+            /* padding: 40px; */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            font-weight: 700;
+            color: #007bff;
+        }
+
+        .form-label {
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white" href="index.html">CarePoint Hospital</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="index.html">Home</a>
+                    </li>
+                    <!-- <li class="nav-item">
+            <a class="nav-link text-white active" aria-current="page" href="booking.html">Book a Test</a>
+          </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="admin.html">Admin Panel</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!-- Booking Form -->
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Diagnostic Test Booking Form</h2>
+
+        <form id="bookingForm" class="needs-validation" novalidate>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="patientName" class="form-label">Patient Name</label>
+                    <input type="text" class="form-control" id="patientName" placeholder="Enter full name" required />
+                    <div class="invalid-feedback">Please enter the patient's name.</div>
+                </div>
+                <div class="col-md-3">
+                    <label for="patientAge" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="patientAge" required min="0" max="120"
+                        placeholder="e.g. 35" />
+                    <div class="invalid-feedback">Please enter a valid age.</div>
+                </div>
+                <div class="col-md-3">
+                    <label for="contactNumber" class="form-label">Contact Number</label>
+                    <input type="tel" class="form-control" id="contactNumber" placeholder="07XXXXXXXX" required
+                        pattern="^07[0-9]{8}$" inputmode="numeric" />
+                    <div class="invalid-feedback">Enter a valid Kenyan number (07XXXXXXXX).</div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="testType" class="form-label">Test Type</label>
+                    <select id="testType" class="form-select" required>
+                        <option value="">-- Select a test --</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a test type.</div>
+                </div>
+                <div class="col-md-3">
+                    <label for="bookingDate" class="form-label">Preferred Date</label>
+                    <input type="date" class="form-control" id="bookingDate" required />
+                    <div class="invalid-feedback">Choose a date within the next 30 days.</div>
+                </div>
+                <div class="col-md-3">
+                    <label for="bookingTime" class="form-label">Preferred Time</label>
+                    <input type="time" class="form-control" id="bookingTime" required />
+                    <div class="invalid-feedback">Please choose a time.</div>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label for="hospitalName" class="form-label">Hospital Name</label>
+                <input type="text" class="form-control" id="hospitalName" value="CarePoint Hospital" disabled />
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg">Submit Booking</button>
+            </div>
+        </form>
+
+        <div id="formSuccess" class="alert alert-success mt-4 d-none" role="alert">
+            🎉 Thank you! Your booking has been submitted successfully. We'll contact you shortly to confirm your
+            appointment.
+        </div>
+
+        <div id="formError" class="alert alert-danger mt-4 d-none" role="alert"></div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white text-center mt-3">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 CarePoint Hospital. All rights reserved.</p>
+            <small>Made by Shandavine Chemutai</small>
+        </div>
+    </footer>
+
+    <!-- Modal Trigger -->
+    <button class="btn btn-warning position-fixed bottom-0 end-0 m-4" data-bs-toggle="modal"
+        data-bs-target="#infoModal">
+        <i class="bi bi-megaphone-fill"></i> Notice
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="infoModalLabel">Important Notice</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    We now offer 24/7 online test bookings. Stay healthy, stay informed. 🏥
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const tests = ["X-Ray", "Ultrasound", "Blood Test", "MRI Scan", "CT Scan"];
+        const testSelect = document.getElementById("testType");
+        tests.forEach(test => {
+            const opt = document.createElement("option");
+            opt.value = test;
+            opt.text = test;
+            testSelect.appendChild(opt);
+        });
+
+        const form = document.getElementById("bookingForm");
+        const successMsg = document.getElementById("formSuccess");
+        const errorMsg = document.getElementById("formError");
+
+        //   form.addEventListener("submit", function (e) {
+        //     e.preventDefault();
+        //     form.classList.add("was-validated");
+        //     errorMsg.classList.add("d-none");
+        //     successMsg.classList.add("d-none");
+
+        //     const name = document.getElementById("patientName").value.trim();
+        //     const age = document.getElementById("patientAge").value;
+        //     const contact = document.getElementById("contactNumber").value;
+        //     const test = testSelect.value;
+        //     const date = document.getElementById("bookingDate").value;
+        //     const time = document.getElementById("bookingTime").value;
+        //     const hospital = "CarePoint Hospital";
+
+        //     const fieldsFilled = name && age && contact && test && date && time;
+        //     const contactValid = /^07\d{8}$/.test(contact);
+        //     const testValid = tests.includes(test);
+
+        //     const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+        //     const isDuplicate = bookings.some(b => b.name === name && b.test === test && b.date === date && b.time === time);
+
+        //     if (!fieldsFilled || !contactValid || !testValid || isDuplicate) {
+        //       errorMsg.classList.remove("d-none");
+        //       errorMsg.innerText = isDuplicate ? "Duplicate booking detected!" : "Please correct the errors in the form.";
+        //       return;
+        //     }
+
+        //     bookings.push({ name, age, contact, test, date, time, hospital });
+        //     localStorage.setItem("bookings", JSON.stringify(bookings));
+
+        //     successMsg.classList.remove("d-none");
+        //     form.reset();
+        //     form.classList.remove("was-validated");
+        //   });
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            form.classList.add("was-validated");
+            errorMsg.classList.add("d-none");
+            successMsg.classList.add("d-none");
+
+            const name = document.getElementById("patientName").value.trim();
+            const age = document.getElementById("patientAge").value;
+            const contact = document.getElementById("contactNumber").value;
+            const test = testSelect.value;
+            const date = document.getElementById("bookingDate").value;
+            const time = document.getElementById("bookingTime").value;
+            const hospital = "CarePoint Hospital";
+
+            const fieldsFilled = name && age && contact && test && date && time;
+            const contactValid = /^07\d{8}$/.test(contact);
+            const testValid = tests.includes(test);
+
+            const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+            //   const isDuplicate = bookings.some(
+            //     (b) =>
+            //       b.name.toLowerCase() === name.toLowerCase() &&
+            //       b.test === test &&
+            //       b.date === date &&
+            //       b.time === time
+            //   );
+            const isDuplicate = bookings.some(
+                (b) =>
+                    b.name.toLowerCase() === name.toLowerCase() || b.contact === contact
+            );
+
+            if (!fieldsFilled || !contactValid || !testValid || isDuplicate) {
+                errorMsg.classList.remove("d-none");
+                errorMsg.innerText = isDuplicate
+                    ? "⚠️ Duplicate booking detected! This patient already booked this test for the selected date and time."
+                    : "Please correct the errors in the form.";
+                return;
+            }
+
+            bookings.push({ name, age, contact, test, date, time, hospital });
+            localStorage.setItem("bookings", JSON.stringify(bookings));
+
+            successMsg.classList.remove("d-none");
+            form.reset();
+            form.classList.remove("was-validated");
+        });
+
+
+        const bookingDateInput = document.getElementById('bookingDate');
+        const today = new Date();
+        const maxDate = new Date();
+        maxDate.setDate(today.getDate() + 30);
+        bookingDateInput.min = today.toISOString().split('T')[0];
+        bookingDateInput.max = maxDate.toISOString().split('T')[0];
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+</body>
+
+
+</html>

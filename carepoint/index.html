@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarePoint Hospital</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-color: #f8f9fa;
+    }
+    h2 {
+      font-weight: 700;
+    }
+    .card i {
+      font-size: 2rem;
+    }
+    .hero-section {
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+      padding: 80px 0;
+    }
+    .hero-section h1 {
+      font-size: 2.8rem;
+    }
+    .hero-section p {
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-white" href="#">CarePoint Hospital</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#tests">Tests</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="booking.html">Book</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="admin.html">Admin</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section text-center">
+  <div class="container">
+    <h1 class="fw-bold">Your Health, Our Priority</h1>
+    <p class="mb-4">Welcome to CarePoint Hospital – Trusted, Affordable, and Timely Diagnostic Care.</p>
+    <a href="booking.html" class="btn btn-warning btn-lg">Book a Test Now</a>
+  </div>
+</section>
+
+<!-- About Us -->
+<section id="about" class="py-5 bg-white">
+  <div class="container text-center">
+    <h2 class="mb-4">Why CarePoint?</h2>
+    <p class="text-muted">We provide reliable, affordable diagnostic services in a welcoming environment. Our experts and technology ensure early detection and peace of mind. Book with us and take charge of your health today.</p>
+  </div>
+</section>
+
+<!-- Available Tests -->
+<section id="tests" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Available Diagnostic Tests</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 text-center p-3">
+          <i class="bi bi-x-circle-fill text-primary mb-3"></i>
+          <h5>X-Ray</h5>
+          <p>Quick, clear imaging for bones and chest diagnostics.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 text-center p-3">
+          <i class="bi bi-eye-fill text-success mb-3"></i>
+          <h5>Ultrasound</h5>
+          <p>Non-invasive imaging for internal organs and pregnancy.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 text-center p-3">
+          <i class="bi bi-droplet-half text-danger mb-3"></i>
+          <h5>Blood Test</h5>
+          <p>Check sugar levels, infections, liver & kidney function.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card h-100 text-center p-3">
+          <i class="bi bi-cpu-fill text-info mb-3"></i>
+          <h5>MRI Scan</h5>
+          <p>Detailed imaging of brain, joints, and tissues.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card h-100 text-center p-3">
+          <i class="bi bi-activity text-warning mb-3"></i>
+          <h5>CT Scan</h5>
+          <p>Fast and precise scans to detect internal injuries.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 text-white text-center bg-primary">
+  <div class="container">
+    <h2 class="fw-bold">Take Control of Your Health</h2>
+    <p class="mb-4">Book your test today and get reliable results with care and confidentiality.</p>
+    <a href="booking.html" class="btn btn-light btn-lg">Book Appointment</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-4 bg-dark text-white text-center">
+  <div class="container">
+    <p class="mb-0">&copy; 2025 CarePoint Hospital. All rights reserved.</p>
+    <small>Made by Shandavine Chemutai</small>
+  </div>
+</footer>
+
+<!-- Modal Trigger -->
+<button class="btn btn-warning position-fixed bottom-0 end-0 m-4" data-bs-toggle="modal" data-bs-target="#infoModal">
+  <i class="bi bi-megaphone-fill"></i> Notice
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="infoModalLabel">Important Notice</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        We now offer 24/7 online test bookings. Stay healthy, stay informed. 🏥
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
